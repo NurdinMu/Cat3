@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:signin/screens/home_screen.dart';
 
 import 'signin_screen.dart';
 
@@ -76,7 +78,23 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       // onTap();
+                      FirebaseAuth.instance
+                          .sendPasswordResetEmail(
+                              email: _emailTextController.text)
+                          .then(
+                        (value) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SigninScreen(),
+                            ),
+                          );
+                        },
+                      ).onError((error, stackTrace) {
+                        print("Error ${error.toString()}");
+                      });
                     },
+                    
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.resolveWith((states) {
@@ -108,7 +126,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     );
                   },
                   child: const Text(
-                    " Sign Up",
+                    " Sign In",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
