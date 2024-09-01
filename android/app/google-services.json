@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "760189359495",
+    "project_id": "fir-lesson-2d732",
+    "storage_bucket": "fir-lesson-2d732.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760189359495:android:bbb2bff11d2839f4bfaf22",
+        "android_client_info": {
+          "package_name": "com.example.signin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbPEBfILnXqVWO_js3bvT3fbDeS8eDs6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
