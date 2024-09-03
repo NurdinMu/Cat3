@@ -28,18 +28,14 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(
-                20, MediaQuery.of(context).size.height * 0.2, 20, 0),
+            padding:  EdgeInsets.fromLTRB(
+                20, MediaQuery.of(context).size.height * 0.09, 20, 0),
             child: Column(
               children: [
-                const Image(
-                  image: NetworkImage(
-                      "https://img.freepik.com/free-psd/bag-right-side_187299-9945.jpg"),
+                Image.asset("../assets/images/shopLogo.png",
                   fit: BoxFit.fitWidth,
-                  width: 240,
-                  height: 240,
-                  color: Colors.yellow,
-                ),
+                  width: 340,
+                  height: 340,),
                 TextField(
                   controller: _emailTextController,
                   obscureText: false,

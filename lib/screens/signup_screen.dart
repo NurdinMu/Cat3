@@ -30,17 +30,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
-                20, MediaQuery.of(context).size.height * 0.2, 20, 0),
+                20, MediaQuery.of(context).size.height * 0.09, 20, 0),
             child: Column(
               children: [
-                // const Image(
-                //   image: NetworkImage(
-                //       "https://img.freepik.com/free-psd/bag-right-side_187299-9945.jpg"),
-                //   fit: BoxFit.fitWidth,
-                //   width: 240,
-                //   height: 240,
-                //   color: Colors.yellow,
-                // ),
+                Image.asset("../assets/images/shopLogo.png",
+                  fit: BoxFit.fitWidth,
+                  width: 340,
+                  height: 340,),
                 TextField(
                   controller: _userNameTextController,
                   obscureText: false,
@@ -186,7 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUpScreen()));
+                                builder: (context) => const SigninScreen()));
                       },
                       child: const Text(
                         " Sign In",
@@ -196,7 +192,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ],
                 )
-              ],
+              ]
             ),
           ),
         ),

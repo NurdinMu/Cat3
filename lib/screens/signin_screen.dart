@@ -4,6 +4,7 @@ import 'package:signin/screens/Resert_Password.dart';
 import 'package:signin/screens/home_screen.dart';
 import 'signup_screen.dart';
 
+
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
 
@@ -31,17 +32,13 @@ class _SigninScreenState extends State<SigninScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
-                20, MediaQuery.of(context).size.height * 0.2, 20, 0),
+                20, MediaQuery.of(context).size.height * 0.08, 20, 0),
             child: Column(
               children: [
-                const Image(
-                  image: NetworkImage(
-                      "https://img.freepik.com/free-psd/bag-right-side_187299-9945.jpg"),
+                Image.asset("../assets/images/shopLogo.png",
                   fit: BoxFit.fitWidth,
-                  width: 240,
-                  height: 240,
-                  color: Colors.yellow,
-                ),
+                  width: 340,
+                  height: 340,),
                 TextField(
                   controller: _emailTextController,
                   obscureText: false,
