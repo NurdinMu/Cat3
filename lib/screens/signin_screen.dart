@@ -4,7 +4,6 @@ import 'package:signin/screens/Resert_Password.dart';
 import 'package:signin/screens/home_screen.dart';
 import 'signup_screen.dart';
 
-
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
 
@@ -35,10 +34,12 @@ class _SigninScreenState extends State<SigninScreen> {
                 20, MediaQuery.of(context).size.height * 0.08, 20, 0),
             child: Column(
               children: [
-                Image.asset("../assets/images/shopLogo.png",
+                Image.asset(
+                  "../assets/images/shopLogo.png",
                   fit: BoxFit.fitWidth,
                   width: 340,
-                  height: 340,),
+                  height: 340,
+                ),
                 TextField(
                   controller: _emailTextController,
                   obscureText: false,
@@ -119,9 +120,24 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                           );
                         },
-                      ).onError((error, stackTrace) {
-                        print("Error ${error.toString()}");
-                      });
+                      ).onError(
+                        (error, stackTrace) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.yellowAccent,
+                              dismissDirection: DismissDirection.up,
+                              duration: Duration(seconds: 7),
+                              content: Text(
+                                "📛Wrong Email or Password📛",
+                                style: TextStyle(
+                                    backgroundColor: Colors.yellowAccent,
+                                    color: Colors.red,
+                                    fontSize: 30),
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
                     style: ButtonStyle(
                         backgroundColor:
