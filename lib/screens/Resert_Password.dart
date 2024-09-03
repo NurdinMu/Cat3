@@ -28,14 +28,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.fromLTRB(
+            padding: EdgeInsets.fromLTRB(
                 20, MediaQuery.of(context).size.height * 0.09, 20, 0),
             child: Column(
               children: [
-                Image.asset("../assets/images/shopLogo.png",
+                Image.asset(
+                  "../assets/images/shopLogo.png",
                   fit: BoxFit.fitWidth,
                   width: 340,
-                  height: 340,),
+                  height: 340,
+                ),
                 TextField(
                   controller: _emailTextController,
                   obscureText: false,
@@ -90,7 +92,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         print("Error ${error.toString()}");
                       });
                     },
-                    
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.resolveWith((states) {
