@@ -123,19 +123,25 @@ class _SigninScreenState extends State<SigninScreen> {
                       ).onError(
                         (error, stackTrace) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
+                           const SnackBar(
+                              
                               backgroundColor: Colors.yellowAccent,
                               dismissDirection: DismissDirection.up,
-                              duration: Duration(seconds: 7),
-                              content: Text(
-                                "📛Wrong Email or Password📛",
+                              duration: const Duration(seconds: 7),
+                              content: const Text(
+                                "       📛Wrong Email or Password📛",
                                 style: TextStyle(
+                                   
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
                                     fontSize: 30),
                               ),
-                            ),
-                          );
+                                padding: const EdgeInsets.symmetric(
+              horizontal: 8.0, // Inner padding for SnackBar content.
+            ) 
+                        
+                             
+                          ),);
                         },
                       );
                     },

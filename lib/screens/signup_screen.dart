@@ -161,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               dismissDirection: DismissDirection.up,
                               duration: Duration(seconds: 7),
                               content: Text(
-                                "📛Invalid Email Email📛",
+                                "📛Invalid Email📛",
                                 style: TextStyle(
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
