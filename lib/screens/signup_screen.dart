@@ -156,48 +156,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         print(error);
                         if (error.toString() == invalidemailError) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
+                            SnackBar(
                               backgroundColor: Colors.yellowAccent,
                               dismissDirection: DismissDirection.up,
-                              duration: Duration(seconds: 7),
-                              content: Text(
-                                "📛Invalid Email📛",
+                              duration: const Duration(seconds: 7),
+                              content: const Text(
+                                "       📛Invalid Email format📛",
                                 style: TextStyle(
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
                                     fontSize: 30),
                               ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
                             ),
                           );
                         } else if (error.toString() == emailExistError) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
+                            SnackBar(
                               backgroundColor: Colors.yellowAccent,
                               dismissDirection: DismissDirection.up,
-                              duration: Duration(seconds: 7),
-                              content: Text(
-                                "Email Address Already Exist📛",
+                              duration: const Duration(seconds: 7),
+                              content: const Text(
+                                "       📛Email is already Exist📛",
                                 style: TextStyle(
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
                                     fontSize: 30),
                               ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
                             ),
                           );
-                        }
-                        else if(error.toString() == weakPassword){
+                        } else if (error.toString() == weakPassword) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
+                            SnackBar(
                               backgroundColor: Colors.yellowAccent,
                               dismissDirection: DismissDirection.up,
-                              duration: Duration(seconds: 7),
-                              content: Text(
-                                "📛Waek Password Plz Enter at least 6 characters📛",
+                              duration: const Duration(seconds: 7),
+                              content: const Text(
+                                "       📛Weak Password,Plz Enter at least 6 characters📛",
                                 style: TextStyle(
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
                                     fontSize: 30),
                               ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
                             ),
                           );
                         }

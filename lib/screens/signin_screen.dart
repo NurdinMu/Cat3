@@ -122,26 +122,50 @@ class _SigninScreenState extends State<SigninScreen> {
                         },
                       ).onError(
                         (error, stackTrace) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                           const SnackBar(
-                              
+                          print(error);// make sure you remove it after testing
+                          if (error.toString() == "[firebase_auth/invalid-email] The email address is badly formatted."){
+                            ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.yellowAccent,
+                              dismissDirection: DismissDirection.up,
+                              duration: const Duration(seconds: 7),
+                              content: const Text(
+                                "       📛Wrong Email format📛",
+                                style: TextStyle(
+                                    backgroundColor: Colors.yellowAccent,
+                                    color: Colors.red,
+                                    fontSize: 30),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
+                            ),
+                          );
+                          }
+                          else if (error.toString() == "[firebase_auth/invalid-credential] The supplied auth credential is incorrect, malformed or has expired."){
+                            ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
                               backgroundColor: Colors.yellowAccent,
                               dismissDirection: DismissDirection.up,
                               duration: const Duration(seconds: 7),
                               content: const Text(
                                 "       📛Wrong Email or Password📛",
                                 style: TextStyle(
-                                   
                                     backgroundColor: Colors.yellowAccent,
                                     color: Colors.red,
                                     fontSize: 30),
                               ),
-                                padding: const EdgeInsets.symmetric(
-              horizontal: 8.0, // Inner padding for SnackBar content.
-            ) 
-                        
-                             
-                          ),);
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
+                            ),
+                          );
+                          }
+                          
                         },
                       );
                     },

@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-          title: const Text("Level Six Lesson"),
+          title: const Text("Shoe Shola",style: ,),
           actions: [
             GestureDetector(
               onTap: () {
@@ -69,6 +69,7 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text(
                 " Sign Out",
+                
                 style:
                     TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
               ),
